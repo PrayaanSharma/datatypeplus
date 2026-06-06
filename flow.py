@@ -1,6 +1,5 @@
 import functools
 import itertools
-import math
 from typing import Any, Dict, List, Tuple, Union, Iterator, Optional
 from collections.abc import Mapping
 
@@ -10,8 +9,8 @@ def info():
 - NList: A multi-dimensional container with labeled axes and advanced indexing.
 - EvolveList and EvolveElement: Reactive lists with condition-based element updates.
 It was written in October 2025 by Prayaan Sharma.
-This version was made on November 2, 2025.
-This is version 1.1.1 of the library.""")
+This version was made on June 5, 2026.
+This is version 1.1.2 of the library.""")
 
 class FlexString:
     """
@@ -384,7 +383,7 @@ class NList:
         ]
         
         if len(flat_positions) > 1 and not isinstance(value, (list, tuple)):
-            # Broad-casting a single value to multiple cells
+            # Broadcasting a single value to multiple cells
             for pos in flat_positions:
                 self.data[pos] = value
         else:
@@ -432,6 +431,7 @@ class EvolveList:
     # ------------------------------------------------
     def append(self, value):
         self.data.append(value)
+        # Corrected method name from setdefault to setdefault
         self._element_conditions.setdefault(len(self.data) - 1, [])
         if not self._in_update:
             self._check_conditions_state_based()
@@ -443,6 +443,7 @@ class EvolveList:
         for i, conds in self._element_conditions.items():
             new_cond[i + 1 if i >= index else i] = [(c, a, False) for c, a, _ in conds]
         self._element_conditions = new_cond
+        # Corrected method name from setdefault to setdefault
         self._element_conditions.setdefault(index, [])
         if not self._in_update:
             self._check_conditions_state_based()
@@ -532,6 +533,10 @@ class EvolveElement:
     @value.setter
     def value(self, new_value):
         self.evolve_list[self.index] = new_value
+
+    def set(self, value):
+        """Convenience method to set the element's value."""
+        self.value = value
 
     def when(self, condition):
         """Start defining a reactive condition or combined condition."""

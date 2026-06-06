@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="datatypeplus",
-    version="1.1.1",
+    version="1.1.2",
     author="Prayaan Sharma",
     author_email="prayaansharma@gmail.com",
     description="A lightweight Python library for flexible data structures and reactive lists.",

@@ -156,7 +156,7 @@ print(info())
 
 Output:
 
-Datatypeplus v1.1.1  
+Datatypeplus v1.1.2  
 Includes: FlexString, NList, EvolveList, EvolveElement  
 License: MIT
 
