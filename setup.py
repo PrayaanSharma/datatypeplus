@@ -1,19 +1,21 @@
 from setuptools import setup, find_packages
 
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
 setup(
     name="datatypeplus",
-    version="1.1.2",
+    version="2.0.0",
     author="Prayaan Sharma",
-    author_email="prayaansharma@gmail.com",
-    description="A lightweight Python library for flexible data structures and reactive lists.",
-    long_description=open("README.md", encoding="utf-8").read(),
+    description="Advanced Data Structures and Fine-Grained Reactive Containers for Python",
+    long_description=long_description,
     long_description_content_type="text/markdown",
-    license="MIT",
+    url="https://github.com/prayaansharma/datatypeplus",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires=">=3.8",
+    python_requires=">=3.7",
 )

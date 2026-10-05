@@ -1,22 +1,30 @@
-"""
-datatypeplus: A small library providing advanced data structures.
+from .flow import (
+    FlexString,
+    NList,
+    EvolveList,
+    EvolveElement,
+    FlexDict,
+    EvolveDict,
+    Signal,
+    Computed,
+    Effect,
+    FlexTree,
+    info,
+)
 
-Classes:
-- FlexString: Mutable string with list-like and string-like methods.
-- NList: Multi-dimensional container with labeled axes.
-- EvolveList & EvolveElement: Reactive list with condition-based triggers.
+__version__ = "2.0.0"
+__author__ = "Prayaan Sharma"
 
-Usage:
-    from datatypeplus import FlexString, NList, EvolveList, EvolveElement, info
-"""
-
-from .flow import FlexString, NList, EvolveList, EvolveElement, info
-
-# Public API
 __all__ = [
     "FlexString",
     "NList",
     "EvolveList",
     "EvolveElement",
+    "FlexDict",
+    "EvolveDict",
+    "Signal",
+    "Computed",
+    "Effect",
+    "FlexTree",
     "info",
 ]
